@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cennik index{% endblock %}
+
+{% block body %}
+    <h1>Cennik index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nazwa_uslugi</th>
+                <th>Cena_m2</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cennik in cenniks %}
+            <tr>
+                <td>{{ cennik.id }}</td>
+                <td>{{ cennik.nazwaUslugi }}</td>
+                <td>{{ cennik.cenaM2 }}</td>
+                <td>
+                    <a href="{{ path('cennik_show', {'id': cennik.id}) }}">show</a>
+                    <a href="{{ path('cennik_edit', {'id': cennik.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('cennik_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cennik{% endblock %}
+
+{% block body %}
+    <h1>Cennik</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ cennik.id }}</td>
+            </tr>
+            <tr>
+                <th>Nazwa_uslugi</th>
+                <td>{{ cennik.nazwaUslugi }}</td>
+            </tr>
+            <tr>
+                <th>Cena_m2</th>
+                <td>{{ cennik.cenaM2 }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('cennik_index') }}">back to list</a>
+
+    <a href="{{ path('cennik_edit', {'id': cennik.id}) }}">edit</a>
+
+    {{ include('cennik/_delete_form.html.twig') }}
+{% endblock %}
