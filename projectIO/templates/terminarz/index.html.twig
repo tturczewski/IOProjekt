@@ -1,20 +1,39 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello TerminarzController!{% endblock %}
+{% block title %}Terminarz index{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <h1>Terminarz index</h1>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Termin_rozpoczecia</th>
+                <th>Termin_zakonczenia</th>
+                <th>Klient</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for terminarz in terminarzs %}
+            <tr>
+                <td>{{ terminarz.id }}</td>
+                <td>{{ terminarz.terminRozpoczecia ? terminarz.terminRozpoczecia|date('Y-m-d') : '' }}</td>
+                <td>{{ terminarz.terminZakonczenia ? terminarz.terminZakonczenia|date('Y-m-d') : '' }}</td>
+                <td>{{ terminarz.klient }}</td>
+                <td>
+                    <a href="{{ path('terminarz_show', {'id': terminarz.id}) }}">show</a>
+                    <a href="{{ path('terminarz_edit', {'id': terminarz.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/rafalsipiatowski/Desktop/Studia/rok 2/semestr 2/io/IOProjekt/projectIO/src/Controller/TerminarzController.php'|file_link(0) }}">src/Controller/TerminarzController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/rafalsipiatowski/Desktop/Studia/rok 2/semestr 2/io/IOProjekt/projectIO/templates/terminarz/index.html.twig'|file_link(0) }}">templates/terminarz/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <a href="{{ path('terminarz_new') }}">Create new</a>
 {% endblock %}
