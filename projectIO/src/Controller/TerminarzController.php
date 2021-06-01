@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Terminarz;
-use App\Form\Terminarz1Type;
+use App\Form\TerminarzType;
 use App\Repository\TerminarzRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -25,7 +25,7 @@ class TerminarzController extends AbstractController
     public function new(Request $request): Response
     {
         $terminarz = new Terminarz();
-        $form = $this->createForm(Terminarz1Type::class, $terminarz);
+        $form = $this->createForm(TerminarzType::class, $terminarz);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -53,7 +53,7 @@ class TerminarzController extends AbstractController
     #[Route('/{id}/edit', name: 'terminarz_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Terminarz $terminarz): Response
     {
-        $form = $this->createForm(Terminarz1Type::class, $terminarz);
+        $form = $this->createForm(TerminarzType::class, $terminarz);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
