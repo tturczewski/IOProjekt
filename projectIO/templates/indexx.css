@@ -1,0 +1,122 @@
+#all{
+	width:100%;
+	height:100%
+}
+
+body{
+	background-image: url("pics/tlo.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+#box{
+	width: 80%;
+	margin-left:10%;
+	margin-right:10%;
+	margin-top:10%;
+	background-color:rgba(37, 50, 50, 0.8);
+	border: solid;
+	border-color: black;
+	color: white;
+
+}
+
+p{
+	margin-left:5%;
+}
+#grafikagorna{
+	height:15%;
+	position: absolute; top:0%;
+	position: fixed;
+	width: 79.3%;
+	text-align:center;
+	padding:0%;
+	margin-left:9.95%;
+	margin-right:10%;
+	border:solid;
+	border-color:black;
+	background-image:url('pics/baner.png');
+
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 9%;
+    position: fixed;
+    height: 14,2%;
+	background-color:rgba(37, 50, 50, 0.8);
+    overflow: auto;
+	margin-top: 7%;
+	border: solid;
+	border-color:black;
+	font-size:14px;
+}
+
+li a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+#stopka{
+	width: 80%;
+	background: black;
+	margin-top:-3px;
+	padding: 0;
+	text-align:center;
+	border: solid;
+	border-color: black;
+	margin-left:auto;
+	margin-right:auto;
+	color:grey;
+}
+
+#text{
+	margin-left: 3%;
+	width: 40%;
+	margin-bottom:3%;
+}
+
+#grafiki_obok_textu img{
+	float:right;
+	width:45%;
+	height:auto;
+	margin-right: 3%;
+	
+	
+}
+
+h1{
+	text-align: center;
+}
+
+a{
+	color:green;
+}
+
+#zdj_galeria img{
+	width:100%;
+	height:auto;
+}
+
+#aktualizacje{
+	margin-bottom: 3%;
+	margin-top: 3%;
+	margin-left: 15%;
+	margin-right: 15%;
+	text-align:center;
+	width: 70%;
+}
