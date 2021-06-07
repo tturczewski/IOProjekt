@@ -21,6 +21,9 @@ body{
 p{
 	margin-left:5%;
 }
+#edit a{
+	margin-left:100px;
+}
 #grafikagorna{
 	height:15%;
 	position: absolute; top:0%;
@@ -107,6 +110,10 @@ ul a:hover:not(.active) {
 	margin-left:40%;
 }
 
+#text td a{
+	margin-left:0%;
+}
+
 #text h1{
 	margin-left:42%;
 	padding-top:2%;
@@ -154,7 +161,7 @@ BANER
 	<li><a href="/home">Home</a></li>
 	<li><a href="/terminarz">Terminarz</a><li>
 	<li><a class="active" href="/cennik">Cennik</a></li>
-	<li><a href="/cennik">Kontakt</a></li>
+	<li><a href="/kontakt/new">Kontakt</a></li>
 </ul>
 
 	<div id="box">
@@ -171,9 +178,9 @@ BANER
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Nazwa_uslugi</th>
-                <th>Cena_m2</th>
-                <th>actions</th>
+                <th>Nazwa uslugi</th>
+                <th>Cena m2</th>
+                <th>Akcje</th>
             </tr>
         </thead>
         <tbody>
@@ -183,8 +190,7 @@ BANER
                 <td>{{ cennik.nazwaUslugi }}</td>
                 <td>{{ cennik.cenaM2 }}</td>
                 <td>
-                    <a href="{{ path('cennik_show', {'id': cennik.id}) }}">show</a>
-                    <a href="{{ path('cennik_edit', {'id': cennik.id}) }}">edit</a>
+                    <a id="edit" href="{{ path('cennik_edit', {'id': cennik.id}) }}">edytuj</a>
                 </td>
             </tr>
         {% else %}
@@ -195,7 +201,7 @@ BANER
         </tbody>
     </table>
 
-    <a href="{{ path('cennik_new') }}">Create new</a>
+    <a href="{{ path('cennik_new') }}">Stwórz nowy cennik</a>
 	
 	</div> <!--zamkniecie diva text-->
 	

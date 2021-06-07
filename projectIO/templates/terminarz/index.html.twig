@@ -106,6 +106,9 @@ ul a:hover:not(.active) {
 #text a{
 	margin-left:35%;
 }
+#text td a{
+	margin-left:0%;
+}
 
 #text h1{
 	margin-left:45%;
@@ -154,7 +157,7 @@ BANER
 	<li><a href="/home">Home</a></li>
 	<li><a class="active" href="/terminarz">Terminarz</a><li>
 	<li><a href="/cennik">Cennik</a></li>
-	<li><a href="/cennik">Kontakt</a></li>
+	<li><a href="/kontakt/new">Kontakt</a></li>
 </ul>
 
 	<div id="box">
@@ -169,10 +172,10 @@ BANER
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Termin_rozpoczecia</th>
-                <th>Termin_zakonczenia</th>
+                <th>Termin rozpoczecia</th>
+                <th>Termin zakonczenia</th>
                 <th>Klient</th>
-                <th>actions</th>
+                <th>Akcje</th>
             </tr>
         </thead>
         <tbody>
@@ -183,8 +186,7 @@ BANER
                 <td>{{ terminarz.terminZakonczenia ? terminarz.terminZakonczenia|date('Y-m-d') : '' }}</td>
                 <td>{{ terminarz.klient }}</td>
                 <td>
-                    <a href="{{ path('terminarz_show', {'id': terminarz.id}) }}">show</a>
-                    <a href="{{ path('terminarz_edit', {'id': terminarz.id}) }}">edit</a>
+                    <a href="{{ path('terminarz_edit', {'id': terminarz.id}) }}">edytuj</a>
                 </td>
             </tr>
         {% else %}
@@ -195,7 +197,7 @@ BANER
         </tbody>
 		
     </table>
-	<a href="{{ path('terminarz_new') }}">Create new</a>
+	<a href="{{ path('terminarz_new') }}">Dodaj nowy terminarz</a>
     
 	</div> <!--zamkniecie diva text-->
 	
