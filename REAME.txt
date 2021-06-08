@@ -1,1 +1,8 @@
+1. Do uruchomienia lokalnie aplikacji prosimy o pobranie paczki projectIO.zip
+2. Potrzeba mieć zainstalowana wersję php8: https://php.tutorials24x7.com/blog/how-to-install-php-8-on-windows
+3. Potrzeba mieć zainstalowana aplikacje composer: https://getcomposer.org/download/
+4. Potrzeba mieć zainstalowana aplikacje Symfony: https://symfony.com/download
+5. Wypakować paczkę z projektem i w Powershell'u/bash/cmd przejść do folderu projectIO
+6. następnie potrzeba wpisać komendę symfony server:start
+7. Po wpisaniu w przeglądarkę strony https://127.0.0.1:8000/home pojawi się strona główna aplikacji
 
